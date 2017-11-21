@@ -1,6 +1,5 @@
 
-# IntegraTI-Web
-Veja nossa [wiki](https://github.com/bti-imd/IntegraTI-Web/wiki).
+# Leadme-Web
 
 # Instruções 
 ## Primeiro setup 
@@ -8,8 +7,6 @@ Veja nossa [wiki](https://github.com/bti-imd/IntegraTI-Web/wiki).
 2. Instalar o Angular-cli `npm install -g @angular/cli`;
 
 ## Clone o repositório
-`git clone origin https://github.com/discentes-imd/IntegraTI-Web.git`
-`cd IntegraTI-Web`
 
 ## Instale as dependências
 Rode `npm install` 
