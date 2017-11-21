@@ -1,3 +1,4 @@
+import { SimulationsModule } from './simulations/simulations.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -39,7 +40,8 @@ import { AppConfig } from './app.config';
     HttpModule,
     AboutModule,
     RegisterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SimulationsModule,
   ],
   providers: [
     AppConfig,
