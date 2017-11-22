@@ -15,7 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutModule } from './about/about.module';
 import { RegisterModule } from './register/register.module';
 import { AppRoutingModule } from './app.routing.module';
-
+import { ReactiveFormsModule} from '@angular/forms'
 // Services
 import { UsuarioService } from './_services/usuario.service';
 import { AuthGuard } from './_guards/auth.guard';
@@ -42,6 +42,8 @@ import { AppConfig } from './app.config';
     RegisterModule,
     AppRoutingModule,
     SimulationsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [
     AppConfig,
