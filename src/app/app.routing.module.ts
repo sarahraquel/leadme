@@ -9,13 +9,11 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { LoginGuard } from './_guards/login.guard';
-import { AboutComponent } from 'app/about/about.component';
 
 const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
     { path: 'register', component: RegisterComponent },
-    {path: 'about', component: AboutComponent},
     {path: 'simulations', component: SimulationsComponent},
     {path: 'profile', component: StudentComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' },

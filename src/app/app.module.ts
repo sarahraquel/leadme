@@ -12,7 +12,6 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 // Modules
-import { AboutModule } from './about/about.module';
 import { RegisterModule } from './register/register.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ReactiveFormsModule} from '@angular/forms'
