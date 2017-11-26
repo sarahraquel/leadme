@@ -1,3 +1,4 @@
+import { StudentComponent } from './student/student.component';
 import { SimulationsComponent } from './simulations/simulations.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'register', component: RegisterComponent },
     {path: 'about', component: AboutComponent},
     {path: 'simulations', component: SimulationsComponent},
+    {path: 'profile', component: StudentComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '/404', pathMatch: 'full' }
