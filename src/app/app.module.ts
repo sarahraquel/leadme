@@ -39,7 +39,6 @@ import { StudentComponent } from './student/student.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AboutModule,
     RegisterModule,
     AppRoutingModule,
     SimulationsModule,

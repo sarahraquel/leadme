@@ -9,7 +9,6 @@ const APP_ROUTES: Routes = [
     {path: '', component: HomeComponent},
     { path: 'login', component:  LoginComponent  },
     {path: 'register', component: RegisterComponent},
-    {path: 'about', component: AboutComponent},
 
 ];
 
