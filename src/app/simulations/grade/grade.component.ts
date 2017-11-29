@@ -1,23 +1,33 @@
 import { Disciplina } from './../../_models/disciplina.model';
-import { DisciplinaService } from './../../_services/disciplina.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grade',
   templateUrl: './grade.component.html',
-  styleUrls: ['./grade.component.css'], 
-  providers: [DisciplinaService]
+  styleUrls: ['./grade.component.css']
 })
 export class GradeComponent implements OnInit {
 
-  listaDisciplinas: [any];
+  listaDisciplinas: any [];
+  a;
+  
+  @Input()
+  fn() {
+    this.a = "uuu"
+    console.log('triggered from the parent')
+  }
 
-  constructor(public DisciplinaService: DisciplinaService) {
-      this.listaDisciplinas = DisciplinaService.disciplinas;
+  constructor() {
+      this.listaDisciplinas = [];
    }
 
   ngOnInit() {
-    console.log(this.listaDisciplinas)
+
   }
+
+  clicked(event) {
+    console.log("Removendo" + event)
+  }
+
 
 }

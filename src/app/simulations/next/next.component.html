@@ -1,55 +1,19 @@
 <table class="table table-striped table-hover ">
   <thead>
   <tr>
-    <th>#</th>
     <th>Nome</th>
     <th>Código</th>
     <th>Tipo</th>
     <th> CH </th>
   </tr>
   </thead>
-  <tbody>
-  <tr>
-    <td>1</td>
-    <td>ESTRUTURA DE DADOS BÁSICAS I</td>
-    <td>IMD0029</td>
-    <td>Obrigatória</td>
-    <td> 60h</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>LINGUAGEM DE PROGRAMAÇÃO I</td>
-    <td>IMD0030</td>
-    <td>Obrigatória</td>
-    <td> 60h</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>PROBABILIDADE</td>
-    <td>IMD0033</td>
-    <td>Obrigatória</td>
-    <td> 60h</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>FUNDAMENTOS MATEMÁTICOS DA COMPUTAÇÃO II </td>
-    <td>IMD0038</td>
-    <td>Obrigatória</td>
-    <td> 90h</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>ANÁLISE E PROJETO ORIENTADO A OBJETOS</td>
-    <td>DIM0504</td>
-    <td>Optativa</td>
-    <td> 60h</td>
-  </tr>
-  <tr>
-    <td> 6</td>
-    <td> PROJETO DE INTERFACES DE USUÁRIO</td>
-    <td> DIM0508 </td>
-    <td> Optativa</td>
-    <td> 60h</td>
-  </tr>
+  <tbody *ngFor="let disciplina of listaDisciplinas" >
+    <tr (click)="clicked(disciplina)"> 
+      <td> {{disciplina.nome}}</td>
+      <td> {{disciplina.codigo}} </td>
+      <td> {{disciplina.tipo}} </td>
+      <td> {{disciplina.ch}} </td>
+    </tr>
   </tbody>
 </table>
+
