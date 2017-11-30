@@ -1,3 +1,29 @@
-<p>
-  course works!
-</p>
+<div class="form-group label-floating">
+
+  <p> Procure por nome ou código de uma disciplina </p>
+  <div class="input-group">
+    <input type="text" id="addon2" class="form-control" #box>
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-fab btn-fab-mini" (click)="search(box.value)">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </button>
+    </span>
+  </div>
+</div>
+
+ <p *ngIf="disciplina_nao_encontrada" class="text-danger" >  Nenhuma disciplina foi encontrada de acordo com os parâmetros da sua busca. Tente novamente.</p>
+<div *ngIf="disciplina && !disciplina_nao_encontrada">
+  <h4> {{disciplina.nome}} </h4>
+ 
+
+
+  <div style="display: block">
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+
+</div>
