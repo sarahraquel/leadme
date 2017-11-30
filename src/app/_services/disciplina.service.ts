@@ -28,4 +28,20 @@ export class DisciplinaService {
     addDisciplina(disciplina){
 
     }
+
+    getDisciplina(nomeOuCodigo):Disciplina{
+        if(nomeOuCodigo== ""){
+            return null;
+        }
+        for(let d of this.disciplinas){
+            if(d.nome.toLowerCase().indexOf(nomeOuCodigo.toLowerCase()) !== -1){
+                return d;
+            }
+            else if(d.codigo.indexOf(nomeOuCodigo.toUpperCase()) !== -1){
+                return d;
+            }
+        }
+
+        return null;
+    }
 }
