@@ -27,6 +27,10 @@ import { AppConfig } from './app.config';
 import { StudentComponent } from './student/student.component';
 import { CourseComponent } from './course/course.component';
 
+import { ChartsModule } from 'ng2-charts';
+import { CordenacaoComponent } from './cordenacao/cordenacao.component';
+import { OrientadorComponent } from './orientador/orientador.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +40,8 @@ import { CourseComponent } from './course/course.component';
     NotFoundComponent,
     StudentComponent,
     CourseComponent,
+    CordenacaoComponent,
+    OrientadorComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,8 +50,8 @@ import { CourseComponent } from './course/course.component';
     RegisterModule,
     AppRoutingModule,
     SimulationsModule,
-    ReactiveFormsModule
-    
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [
     AppConfig,
