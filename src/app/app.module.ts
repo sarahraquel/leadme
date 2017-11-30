@@ -25,6 +25,7 @@ import { AuthService } from './_services/auth.service';
 // Configs
 import { AppConfig } from './app.config';
 import { StudentComponent } from './student/student.component';
+import { CourseComponent } from './course/course.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { StudentComponent } from './student/student.component';
     TopMenuComponent,
     NotFoundComponent,
     StudentComponent,
+    CourseComponent,
   ],
   imports: [
     BrowserModule,
