@@ -9,12 +9,7 @@
       </div>
       <div class="col-sm-5">
           <h3> Sua grade </h3>
-          <app-grade [fn]="parentFn"> </app-grade>
-            <p> Diagnóstico: </p>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
-            </div>
-            <p> Sua carga horária está </p>
+          <app-grade [childText]="parentMessage"> </app-grade>
       </div>
   </div>
   <div class="row">
@@ -22,5 +17,3 @@
           
       </div>
   </div>
-
-<p (click)="parentFn()"> TESTANDO </p>

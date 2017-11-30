@@ -1,6 +1,6 @@
 import { Disciplina } from './../../_models/disciplina.model';
 import { Component, OnInit, Input } from '@angular/core';
-
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-grade',
   templateUrl: './grade.component.html',
@@ -9,24 +9,30 @@ import { Component, OnInit, Input } from '@angular/core';
 export class GradeComponent implements OnInit {
 
   listaDisciplinas: any [];
-  a;
-  
-  @Input()
-  fn() {
-    this.a = "uuu"
-    console.log('triggered from the parent')
+
+  private _childText: string;
+
+  @Input() 
+  set childText(value) {
+    if (this.listaDisciplinas.indexOf(value) != -1){
+      console.log("ja existe")
+    }
+    else{
+      this.listaDisciplinas.push(value)
+    }
   }
+
 
   constructor() {
       this.listaDisciplinas = [];
    }
 
   ngOnInit() {
-
+    this.listaDisciplinas.pop()
   }
 
-  clicked(event) {
-    console.log("Removendo" + event)
+  remove(disciplina) {
+    this.listaDisciplinas = this.listaDisciplinas.filter(obj => obj !== disciplina);
   }
 
 

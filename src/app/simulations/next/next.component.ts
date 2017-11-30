@@ -13,7 +13,6 @@ export class NextComponent implements OnInit {
     listaDisciplinas: any[];
     disciplinasAdicionadas: any [];
 
-    message: string = "Hola Mundo!"
     @Output() messageEvent = new EventEmitter<string>();
 
   constructor(public DisciplinaService: DisciplinaService) {
@@ -30,7 +29,6 @@ export class NextComponent implements OnInit {
   }
 
   clicked(event) {
-    console.log("Tabela 1 add" + event.nome)
     this.disciplinasAdicionadas.push(event);
     this.sendMessage(event)
   }
