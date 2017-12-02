@@ -22,7 +22,7 @@
   <div class="progress">
     <div [ngClass]="barClass" [ngStyle]="percentageStyle"></div>
   </div>
-  <p> Sua carga horária está <span [ngClass]="classe"> {{diagnosticoTexto}} </span> do recomendado.</p>
+  <p> Sua carga horária está <span [ngClass]="label_class"> {{diagnosticoTexto}} </span> do recomendado.</p>
 </div> 
 
 <div *ngIf="listaDisciplinas.length <= 0">

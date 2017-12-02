@@ -35,8 +35,7 @@ export class GradeComponent implements OnInit {
 
   remove(disciplina) {
     this.listaDisciplinas = this.listaDisciplinas.filter(obj => obj !== disciplina);
-    this.totalHoras -= disciplina.ch
-    this.calculaPorcentagem()
+    this.getDiagnostico(-disciplina.ch)
   }
 
   diagnosticoTexto: string = "";
@@ -45,8 +44,6 @@ export class GradeComponent implements OnInit {
   getDiagnostico(value){
     this.totalHoras = this.totalHoras + value;
     this.calculaPorcentagem()
-    console.log(this.percentageStyle)
-    console.log(this.totalHoras)
     if(this.totalHoras < 200){
       this.diagnosticoTexto = "abaixo"
       this.diagnosticoPorcentagem = 30
