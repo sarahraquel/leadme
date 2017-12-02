@@ -1,0 +1,7 @@
+.next{
+    overflow: auto; max-height: 300px;
+}
+
+td:hover{
+    cursor: pointer; 
+}

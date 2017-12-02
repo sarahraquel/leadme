@@ -11,16 +11,25 @@ export class GradeComponent implements OnInit {
   listaDisciplinas: any [];
 
   private _childText: string;
+  cargaHorariaExcedida;
 
   @Input() 
   set childText(value) {
     if (this.listaDisciplinas.indexOf(value) != -1){
       console.log("ja existe")
     }
+    
     else{
+      if(value.ch + this.totalHoras >= 450){
+        this.cargaHorariaExcedida = true;
+        return
+      }
+      this.cargaHorariaExcedida = false;
       this.listaDisciplinas.push(value)
       this.getDiagnostico(value.ch)
     }
+
+    console.log(this.cargaHorariaExcedida)
   }
 
 
@@ -34,6 +43,7 @@ export class GradeComponent implements OnInit {
   }
 
   remove(disciplina) {
+    this.cargaHorariaExcedida = false;
     this.listaDisciplinas = this.listaDisciplinas.filter(obj => obj !== disciplina);
     this.getDiagnostico(-disciplina.ch)
   }
@@ -56,7 +66,7 @@ export class GradeComponent implements OnInit {
       this.label_class = "label label-success"
       this.barClass = "progress-bar progress-bar-success"
     }
-    else{
+    else if(this.totalHoras>330 && this.totalHoras < 450){
       this.diagnosticoTexto = "acima"
       this.label_class = "label label-danger"
       this.barClass = "progress-bar progress-bar-danger"

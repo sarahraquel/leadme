@@ -17,12 +17,17 @@
       </tr>
     </tbody>
   </table>
+
+<div *ngIf="cargaHorariaExcedida" class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  De acordo com o regularmento do seu curso, a carga horária escolhida não pode exceder 450 horas. 
+</div>
+
   <p> Total: {{totalHoras}} horas </p>
-  <p> Diagnóstico: </p>
+  <p> Diagnóstico: Sua carga horária está <span [ngClass]="label_class"> {{diagnosticoTexto}} </span> do recomendado. </p>
   <div class="progress">
     <div [ngClass]="barClass" [ngStyle]="percentageStyle"></div>
   </div>
-  <p> Sua carga horária está <span [ngClass]="label_class"> {{diagnosticoTexto}} </span> do recomendado.</p>
 </div> 
 
 <div *ngIf="listaDisciplinas.length <= 0">
@@ -30,3 +35,4 @@
      Clique em uma disciplina na tabela ao lado para adicioná-la.
   </div>
 </div>
+
