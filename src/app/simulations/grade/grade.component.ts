@@ -1,6 +1,6 @@
 import { Disciplina } from './../../_models/disciplina.model';
 import { Component, OnInit, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { NgIf, NgClass,  NgStyle } from '@angular/common';
 @Component({
   selector: 'app-grade',
   templateUrl: './grade.component.html',
@@ -19,6 +19,7 @@ export class GradeComponent implements OnInit {
     }
     else{
       this.listaDisciplinas.push(value)
+      this.getDiagnostico(value.ch)
     }
   }
 
@@ -29,11 +30,49 @@ export class GradeComponent implements OnInit {
 
   ngOnInit() {
     this.listaDisciplinas.pop()
+    this.totalHoras = 0
   }
 
   remove(disciplina) {
     this.listaDisciplinas = this.listaDisciplinas.filter(obj => obj !== disciplina);
+    this.totalHoras -= disciplina.ch
+    this.calculaPorcentagem()
   }
 
+  diagnosticoTexto: string = "";
+  diagnosticoPorcentagem: number = 0;
+  totalHoras;
+  getDiagnostico(value){
+    this.totalHoras = this.totalHoras + value;
+    this.calculaPorcentagem()
+    console.log(this.percentageStyle)
+    console.log(this.totalHoras)
+    if(this.totalHoras < 200){
+      this.diagnosticoTexto = "abaixo"
+      this.diagnosticoPorcentagem = 30
+      this.label_class = "label label-warning"
+      this.barClass = "progress-bar progress-bar-warning"
 
+    }
+    else if(this.totalHoras > 200 && this.totalHoras <= 330){
+      this.diagnosticoTexto = "próximo"
+      this.label_class = "label label-success"
+      this.barClass = "progress-bar progress-bar-success"
+    }
+    else{
+      this.diagnosticoTexto = "acima"
+      this.label_class = "label label-danger"
+      this.barClass = "progress-bar progress-bar-danger"
+    }
+  }
+
+  calculaPorcentagem(){
+    this.percentage = Math.trunc(this.totalHoras*100/420) > 100? 100 : Math.trunc(this.totalHoras*100/420);
+    this.percentageStyle = {"width" : this.percentage+ "%"}
+  }
+    label_class:string = "label";
+    barClass:string;
+    percentage:number;
+    ch_maxima = 420;
+    percentageStyle;
 }

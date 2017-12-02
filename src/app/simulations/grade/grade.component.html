@@ -17,14 +17,16 @@
       </tr>
     </tbody>
   </table>
-
+  <p> Total: {{totalHoras}} horas </p>
   <p> Diagnóstico: </p>
   <div class="progress">
-    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+    <div [ngClass]="barClass" [ngStyle]="percentageStyle"></div>
   </div>
-  <p> Sua carga horária está </p>
+  <p> Sua carga horária está <span [ngClass]="classe"> {{diagnosticoTexto}} </span> do recomendado.</p>
 </div> 
 
 <div *ngIf="listaDisciplinas.length <= 0">
-  <p> Clique em uma disciplina na tabela ao lado para adicioná-la.
+  <div class="alert alert-dismissible alert-warning">
+     Clique em uma disciplina na tabela ao lado para adicioná-la.
+  </div>
 </div>
