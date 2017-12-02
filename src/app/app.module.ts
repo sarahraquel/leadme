@@ -30,6 +30,8 @@ import { CourseComponent } from './course/course.component';
 import { ChartsModule } from 'ng2-charts';
 import { CordenacaoComponent } from './cordenacao/cordenacao.component';
 import { OrientadorComponent } from './orientador/orientador.component';
+import { AproveitamentoComponent } from './student/aproveitamento/aproveitamento.component';
+import { CursadoComponent } from './student/cursado/cursado.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { OrientadorComponent } from './orientador/orientador.component';
     CourseComponent,
     CordenacaoComponent,
     OrientadorComponent,
+    AproveitamentoComponent,
+    CursadoComponent,
   ],
   imports: [
     BrowserModule,

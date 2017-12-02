@@ -36,9 +36,9 @@ export class CourseComponent implements OnInit {
 
   search(a){
     this.disciplina = this.DisciplinaService.getDisciplina(a)
-    let randomOne = Math.floor(Math.random() * (60 - 1 + 1)) + 1;
-    let randomTwo = Math.floor(Math.random() * (600 - 100 + 1)) + 100;
-    this.pieChartData = [randomOne, randomTwo ]
+    let reprovados = Math.floor(Math.random() * (40 - 5 + 1)) + 5;
+    let aprovados = 60 - reprovados;
+    this.pieChartData = [reprovados, aprovados ]
     if(this.disciplina == null){
       this.disciplina_nao_encontrada = true
     }
