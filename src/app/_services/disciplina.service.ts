@@ -18,7 +18,7 @@ export class DisciplinaService {
         new Disciplina("IMD0039", this.capitalize("ESTRUTURAS DE DADOS BÁSICAS") + " II" ,60, "Obrigatória" ),
         new Disciplina("IMD0029", this.capitalize("ESTRUTURAS DE DADOS BÁSICAS") + " I" ,60, "Obrigatória" ),
         new Disciplina("IMD0041", this.capitalize("INTRODUÇÃO A ORGANIZAÇÃO E ARQUITETURA DE COMPUTADORES"), 60, "Optativa"),
-        new Disciplina("IMD0036", this.capitalize("	SISTEMAS OPERACIONAIS"), 60, "Optativa"),
+        new Disciplina("IMD0036", this.capitalize("SISTEMAS OPERACIONAIS"), 60, "Optativa"),
         new Disciplina("IMD0040", this.capitalize("LINGUAGEM DE PROGRAMAÇÃO")  + " II", 60, "Obrigatória"), 
         new Disciplina("IMD0030", this.capitalize("LINGUAGEM DE PROGRAMAÇÃO") + " I", 60, "Obrigatória"),
         new Disciplina("IMD0017", this.capitalize("PRÁTICAS DE LEITURA E ESCRITA EM PORTUGUÊS") + " I", 30, "Obrigatória" ),
