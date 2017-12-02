@@ -5,16 +5,19 @@ import { Http } from '@angular/http';
 export class AuthService {
     private autheticated: boolean = false;
 
-    constructor(private http : Http) { }
+    constructor(private http : Http) { 
+        this.autheticated = false;
+    }
 
     autenticarUsuario(data) {
-
-        return this.http.post("http://apitestes.info.ufrn.br/authz-server/oauth/token?client_id=integra-ti-id&client_secret=segredo&grant_type=client_credentials", data)
-        .map(res => res.json(),
-             err => err)
+        this.autheticated = true;
     }
 
     get isAuthenticated(){
+        return this.autheticated;
+    }
+
+    isauth(){
         return this.autheticated;
     }
 }

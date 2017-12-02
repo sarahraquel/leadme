@@ -1,3 +1,4 @@
+import { AuthService } from './../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-menu.component.css']
 })
 export class TopMenuComponent implements OnInit {
-
-  constructor() { }
+  
+  loginOuLogout:string 
+  constructor(public auth:AuthService) { }
 
   ngOnInit() {
+    this.loginOuLogout   = this.auth.isauth ? "Logout" : "Login";
   }
+
+
+
 
 }

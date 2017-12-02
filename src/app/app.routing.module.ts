@@ -12,13 +12,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginGuard } from './_guards/login.guard';
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent },
     { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
     { path: 'register', component: RegisterComponent },
     {path: 'simulations', component: SimulationsComponent},
     {path: 'profile', component: StudentComponent},
      {path: 'course', component: CourseComponent},
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '/404', pathMatch: 'full' }
 ];

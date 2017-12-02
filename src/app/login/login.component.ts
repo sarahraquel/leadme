@@ -11,36 +11,15 @@ import { AuthService } from '../_services/auth.service';
 })
 export class LoginComponent implements OnInit {
   last_url: string = '/';
-  formularioLogin: FormGroup
 
-  constructor(private auth: AuthService, 
-    private router: Router, 
-    private route: ActivatedRoute, 
-    private formBuilder: FormBuilder) { }
+  constructor(private auth: AuthService, private router: Router, 
+    private route: ActivatedRoute) { }
 
   fazerLogin() {
-    
-    if(this.formularioLogin.valid){
-      let data = {
-        ...this.formularioLogin.value
-      } 
-      this.auth.autenticarUsuario(data)
-                .subscribe((result) =>{
-                  console.log(result)
-                })
-    }
+    this.router.navigateByUrl("/profile");
   }
 
   ngOnInit() {
-    this.formularioLogin = this.formBuilder.group({
-      usuario: [null],
-      password: [null]
-  })
-    // Busca a ultima rota para redirecionar após o Login
-    this.route.fragment.subscribe((url) => {
-      this.last_url = url ? url : '/';
-    })
-
   }
 
 }
